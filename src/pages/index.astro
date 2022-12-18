@@ -8,16 +8,16 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="taep96's epic website">
     <main class="flex w-[80vw] flex-col gap-12">
-        <img class="aspect-square w-64 rounded-full" src="images/cirno-business.png" alt="taep96" />
+        <img class="aspect-square w-48 rounded-full sm:w-64" src="images/cirno-business.png" alt="taep96" />
         <div class="flex w-fit flex-col gap-4">
-            <h1 class="text-2xl font-bold">Hey there! 👋</h1>
-            <p class="max-w-[46rem] leading-tight">
+            <h1 class="text-xl font-bold sm:text-2xl">Hey there! 👋</h1>
+            <p class="max-w-[46rem] text-sm leading-tight sm:text-base">
                 I'm taep96, a Fullstack Dev & Software Engineer based in your walls. Experienced in Linux, Rust,
                 Node.js, TypeScript, JavaScript, and HTML + CSS. Hit me up if you want a website or an applicaiton
                 written!
             </p>
             <hr class="h-px rounded-full border-0 bg-[#928374]" />
-            <footer class="flex flex-wrap gap-x-12 gap-y-4">
+            <footer class="flex flex-wrap gap-x-12 gap-y-2">
                 <a href="//discord.com" target="_blank">
                     <AtSign /><span>taep96<span>#</span>7980</span>
                 </a>
@@ -33,8 +33,20 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
+    img,
+    h1,
+    p,
+    a,
+    svg {
+        @apply duration-300;
+    }
+
     a {
-        @apply flex items-center gap-1;
+        @apply flex  items-center gap-1 text-sm text-fg sm:text-base;
+    }
+
+    svg {
+        @apply aspect-square w-5 sm:w-6;
     }
 
     span span,
