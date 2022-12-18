@@ -39,7 +39,9 @@ const { title } = Astro.props;
         <meta name="twitter:image" content="https://taep96.moe/images/cirno-business.png" />
     </head>
     <body class="flex items-center justify-center">
-        <slot />
+        <main class="flex w-[80vw] flex-col gap-12">
+            <slot />
+        </main>
         <img class="fixed bottom-4 right-4 w-32 opacity-10" src="images/archbtw.png" alt="I use Arch btw" />
     </body>
 </html>
