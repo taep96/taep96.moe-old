@@ -3,8 +3,120 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="taep96's epic website">
-    <main class="flex w-[80vw] flex-col gap-12">
-        <h1 class="text-4xl font-bold">404</h1>
-        <p>Couldn't find the page you were looking for {">"}_{"<"}, <a href="/">go home?</a></p>
-    </main>
+    <h1 class="text-2xl font-bold">404 <span>/</span></h1>
+    <p>Couldn't find the page you were looking for - <a href="/">go home?</a></p>
 </Layout>
+
+<style>
+    h1 {
+        @apply text-fg;
+    }
+
+    span {
+        @apply select-none bg-accent text-accent;
+
+        animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+</style>
+
+<script>
+    const kaomojis = [
+        "( ; ω ; )",
+        "( ` ﾛ ´)︻デ═一",
+        "( ´-ω･)︻┻┳══━一",
+        "( ´ー`)ﾉﾞ",
+        "( ౦ ‸ ౦ )",
+        "( ￣Д￣)",
+        "( ￣▽￣)︻┳═一",
+        "(-_-)・・・",
+        "(>_<)",
+        "(>д<)",
+        "(>﹏<)",
+        "(O.O)",
+        "(O_O)",
+        "(T_T)",
+        "(o_O)",
+        "(x . x)",
+        "(x_x)",
+        "(¬_¬)",
+        "(¯ . ¯)",
+        "(°ロ°)",
+        "(´-ω-`)",
+        "(×_×)",
+        "(×﹏×)",
+        "(μ_μ)",
+        "(ಠ_ಠ)",
+        "(ಡ‸ಡ)",
+        "(ಥ﹏ಥ)",
+        "(ᓀ ᓀ)",
+        "(•ิ_•ิ)?",
+        "(←_←)",
+        "(→_→)",
+        "(↼_↼)",
+        "(⇀_⇀)",
+        "(⇀‸↼‶)",
+        "(⊃｡•́‿•̀｡)⊃",
+        "(╥_╥)",
+        "(╥﹏╥)",
+        "(╮°-°)╮┳━━┳ ( ╯°□°)╯ ┻━━┻",
+        "(╯_╰)",
+        "(╯°-°)╯彡┻━┻",
+        "(◣_◢)",
+        "(◣﹏◢)",
+        "(〃＞＿＜ 〃)",
+        "(〃￣ω￣〃)ゞ",
+        "(」°ロ°)」",
+        "(〒﹏〒)",
+        "(っ˘̩╭╮˘̩)っ",
+        "(・_・)",
+        "(个_个)",
+        "(︶︹︶)",
+        "(＋_＋)",
+        "(－.－)",
+        "(－_－)",
+        "(－ω－)",
+        "(＞_＜)",
+        "(＞﹏＜)",
+        "(＠_＠)",
+        "(｡T ω T｡)",
+        "(ﾒ﹏ﾒ)",
+        "(￢ ￢)",
+        "(￢_￢)",
+        "(￣_￣)",
+        "(￣o￣)",
+        "(￣ρ￣)",
+        "(￣ω￣)",
+        "(￣□￣」)",
+        "(￣、￣〃)",
+        "(￣ヘ￣)",
+        "(￣︿￣)",
+        "(￣﹃￣)",
+        "(￣～￣)",
+        "Q(`⌒´Q)",
+        "~(>_< ~)",
+        "┐(`～`)┌",
+        "┐(￣ヘ￣)┌",
+        "┐(￣～￣)┌",
+        "┬─┬ノ( º _ ºノ)",
+        "╮(￣ω￣)╭",
+        "ヽ(°ｏ°)ﾉ",
+        "ヽ(ˇヘˇ)ノ",
+        "ヽ(￣～￣)ノ",
+        "ヾ(`ヘ´)ﾉﾞ",
+    ];
+    document.querySelector("p")!.append(` ${kaomojis[Math.floor(Math.random() * kaomojis.length)]}`);
+</script>
