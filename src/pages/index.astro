@@ -1,87 +1,44 @@
 ---
-import Card from "../components/Card.astro";
+// astro-feather-icons doesn't have typescript support yet, so we have to ignore it
+// @ts-ignore
+import { AtSign, GitHub, Mail } from "astro-feather-icons";
+
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-    <main>
-        <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-        <p class="instructions">
-            To get started, open the directory <code>src/pages</code> in your project.<br />
-            <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-        </p>
-        <ul class="link-card-grid">
-            <Card
-                href="https://docs.astro.build/"
-                title="Documentation"
-                body="Learn how Astro works and explore the official API docs."
-            />
-            <Card
-                href="https://astro.build/integrations/"
-                title="Integrations"
-                body="Supercharge your project with new frameworks and libraries."
-            />
-            <Card
-                href="https://astro.build/themes/"
-                title="Themes"
-                body="Explore a galaxy of community-built starter themes."
-            />
-            <Card
-                href="https://astro.build/chat/"
-                title="Community"
-                body="Come say hi to our amazing Discord community. ❤️"
-            />
-        </ul>
+<Layout title="taep96's epic website">
+    <main class="flex w-[80vw] flex-col gap-12">
+        <img class="aspect-square w-64 rounded-full" src="images/cirno-business.png" alt="taep96" />
+        <div class="flex w-fit flex-col gap-4">
+            <h1 class="text-2xl font-bold">Hey there! 👋</h1>
+            <p class="max-w-[46rem] leading-tight">
+                I'm taep96, a Fullstack Dev & Software Engineer based in your walls. Experienced in Linux, Rust,
+                Node.js, TypeScript, JavaScript, and HTML + CSS. Hit me up if you want a website or an applicaiton
+                written!
+            </p>
+            <hr class="h-px rounded-full border-0 bg-[#928374]" />
+            <footer class="flex flex-wrap gap-x-12 gap-y-4">
+                <a href="//discord.com" target="_blank">
+                    <AtSign /><span>taep96<span>#</span>7980</span>
+                </a>
+                <a href="mailto:taep96@cock.li" target="_blank">
+                    <Mail /><span>taep96<span>@</span>cock<span>.</span>li</span>
+                </a>
+                <a href="//github.com/taep96" target="_blank">
+                    <GitHub /><span>github<span>.</span>com<span>/</span>taep96</span>
+                </a>
+            </footer>
+        </div>
     </main>
 </Layout>
 
 <style>
-    main {
-        max-width: 60ch;
-        padding: 1.5rem;
-        margin: auto;
+    a {
+        @apply flex items-center gap-1;
     }
 
-    h1 {
-        margin: 0;
-        font-size: 3rem;
-        font-weight: 800;
-    }
-
-    .text-gradient {
-        background-clip: text;
-        background-image: var(--accent-gradient);
-        background-position: 0%;
-        background-size: 400%;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .instructions {
-        padding: 1rem;
-        border: 1px solid rgb(var(--accent) 25%);
-        border-radius: 0.4rem;
-        margin: 1rem 0;
-        background-color: white;
-        line-height: 1.6;
-    }
-
-    .instructions code {
-        padding: 0.3em 0.45em;
-        border-radius: 4px;
-        background: rgb(var(--accent) 12%);
-        color: rgb(var(--accent));
-        font-size: 0.875em;
-        font-weight: bold;
-    }
-
-    .instructions strong {
-        color: rgb(var(--accent));
-    }
-
-    .link-card-grid {
-        display: grid;
-        padding: 0;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    span span,
+    svg {
+        @apply text-accent;
     }
 </style>
