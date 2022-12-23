@@ -1,6 +1,9 @@
 ---
 import "@fontsource/jetbrains-mono/variable.css";
 
+import Archbtw from "@assets/archbtw.png";
+import { Image } from "@astrojs/image/components";
+
 export interface Props {
     title?: string;
     description?: string;
@@ -44,7 +47,7 @@ const { title = "taep96's epic website", description = "Hey there! I'm taep96!" 
         <main class="flex w-[80vw] flex-col gap-12">
             <slot />
         </main>
-        <img class="fixed bottom-4 right-4 w-32 opacity-10" src="images/archbtw.png" alt="I use Arch btw" />
+        <Image class="fixed bottom-4 right-4 w-32 opacity-10" src={Archbtw} format="avif" alt="I use Arch btw" />
     </body>
 </html>
 
