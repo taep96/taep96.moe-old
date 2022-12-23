@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
     content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
     theme: {
@@ -6,10 +7,11 @@ module.exports = {
             colors: {
                 bg: "#282828",
                 fg: "#ebdbb2",
-                accent: "#b8bb26",
+                green: "#b8bb26",
+                gray: "#928374",
             },
             fontFamily: {
-                mono: ["JetBrains Mono", "monospace"],
+                mono: ["JetBrains MonoVariable", "monospace"],
             },
             animation: {
                 cursor: "cursor 1.5s infinite",

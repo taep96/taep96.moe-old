@@ -15,7 +15,15 @@
         "project": "./tsconfig.json",
         "extraFileExtensions": [".astro"]
     },
+    "settings": {
+        "tailwindcss": {
+            "config": "./tailwind.config.cjs"
+        }
+    },
     "rules": {
+        // conflicts with prettier-plugin-tailwindcss
+        "tailwindcss/classnames-order": "off",
+
         "@typescript-eslint/consistent-type-imports": "error",
         "simple-import-sort/imports": "error",
         "simple-import-sort/exports": "error",

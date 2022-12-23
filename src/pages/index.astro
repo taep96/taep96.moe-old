@@ -1,53 +1,32 @@
 ---
+import Layout from "@layouts/Layout.astro";
 // astro-feather-icons doesn't have typescript support yet, so we have to ignore it
 // @ts-ignore
 import { AtSign, GitHub, Mail } from "astro-feather-icons";
-
-import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="taep96's epic website">
-    <img class="aspect-square w-48 rounded-full sm:w-64" src="images/cirno-business.png" alt="taep96" />
+<Layout>
+    <img class="aspect-square w-48 rounded-full sm:w-64" src="images/cirno-business.png" alt="" />
     <div class="flex w-fit flex-col gap-4">
         <h1>Hey there! 👋</h1>
         <p class="max-w-[46rem] leading-tight">
             I'm taep96, a Fullstack Dev & Software Engineer based in your walls. Experienced in Linux, Rust, Node.js,
             TypeScript, JavaScript, and HTML + CSS. Hit me up if you want a website or an applicaiton written!
         </p>
-        <hr class="h-px rounded-full border-0 bg-[#928374]" />
+        <hr class="rounded-full border-gray" />
         <footer class="flex flex-wrap gap-x-12 gap-y-2">
-            <a href="//discord.com" target="_blank">
-                <AtSign /><span>taep96<span>#</span>7980</span>
+            <a class="flex gap-1 text-fg" href="//discord.com" target="_blank">
+                <AtSign class="text-green aspect-square w-5 sm:w-6" />
+                <span>taep96<span class="text-green">#</span>7980</span>
             </a>
-            <a href="mailto:taep96@cock.li" target="_blank">
-                <Mail /><span>taep96<span>@</span>cock<span>.</span>li</span>
+            <a class="flex gap-1 text-fg" href="mailto:taep96@cock.li" target="_blank">
+                <Mail class="text-green aspect-square w-5 sm:w-6" />
+                <span>taep96<span class="text-green">@</span>cock<span class="text-green">.</span>li</span>
             </a>
-            <a href="//github.com/taep96" target="_blank">
-                <GitHub /><span>github<span>.</span>com<span>/</span>taep96</span>
+            <a class="flex gap-1 text-fg" href="//github.com/taep96" target="_blank">
+                <GitHub class="text-green aspect-square w-5 sm:w-6" />
+                <span>github<span class="text-green">.</span>com<span class="text-green">/</span>taep96</span>
             </a>
         </footer>
     </div>
 </Layout>
-
-<style>
-    img,
-    h1,
-    p,
-    a,
-    svg {
-        @apply duration-300;
-    }
-
-    a {
-        @apply flex  items-center gap-1 text-sm text-fg sm:text-base;
-    }
-
-    svg {
-        @apply aspect-square w-5 sm:w-6;
-    }
-
-    span span,
-    svg {
-        @apply text-accent;
-    }
-</style>
