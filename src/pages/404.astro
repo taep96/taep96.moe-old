@@ -1,37 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="taep96's epic website">
-    <h1 class="text-2xl font-bold">404 <span>/</span></h1>
+<Layout title="Page not found">
+    <h1 class="text-2xl font-bold after:animate-cursor after:bg-green after:text-green after:content-['-']">404</h1>
     <p>Couldn't find the page you were looking for - <a href="/">go home?</a></p>
 </Layout>
-
-<style>
-    h1 {
-        @apply text-fg;
-    }
-
-    span {
-        @apply select-none bg-accent text-accent;
-
-        animation: blink 1.5s infinite;
-    }
-
-    @keyframes blink {
-        0% {
-            opacity: 0;
-        }
-
-        50% {
-            opacity: 1;
-        }
-
-        100% {
-            opacity: 0;
-        }
-    }
-</style>
 
 <script>
     const kaomojis = [
@@ -72,7 +46,7 @@ import Layout from "../layouts/Layout.astro";
         "(⊃｡•́‿•̀｡)⊃",
         "(╥_╥)",
         "(╥﹏╥)",
-        "(╮°-°)╮┳━━┳ ( ╯°□°)╯ ┻━━┻",
+        "( ╯°□°)╯ ┻━━┻",
         "(╯_╰)",
         "(╯°-°)╯彡┻━┻",
         "(◣_◢)",
@@ -118,5 +92,8 @@ import Layout from "../layouts/Layout.astro";
         "ヽ(￣～￣)ノ",
         "ヾ(`ヘ´)ﾉﾞ",
     ];
-    document.querySelector("p")!.append(` ${kaomojis[Math.floor(Math.random() * kaomojis.length)]}`);
+
+    const kaomoji = kaomojis[Math.floor(Math.random() * kaomojis.length)];
+    document.querySelector("p")!.append(` ${kaomoji}`);
+    document.title += ` ${kaomoji}`;
 </script>

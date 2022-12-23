@@ -11,6 +11,15 @@ module.exports = {
             fontFamily: {
                 mono: ["JetBrains Mono", "monospace"],
             },
+            animation: {
+                cursor: "cursor 1.5s infinite",
+            },
+            keyframes: {
+                cursor: {
+                    "0%, 100%": { opacity: 0 },
+                    "50%": { opacity: 1 },
+                },
+            },
         },
     },
     plugins: [],
