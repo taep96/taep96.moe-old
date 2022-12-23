@@ -10,6 +10,8 @@ export interface Props {
 }
 
 const { title = "taep96's epic website", description = "Hey there! I'm taep96!" } = Astro.props;
+
+const site = Astro.site!;
 ---
 
 <!DOCTYPE html>
@@ -21,7 +23,7 @@ const { title = "taep96's epic website", description = "Hey there! I'm taep96!" 
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width" />
         <meta name="theme-color" content="#b8bb26" />
-        <link rel="canonical" href={Astro.request.url} />
+        <link rel="canonical" href={Astro.url.href} />
 
         <!-- Icons -->
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -32,16 +34,16 @@ const { title = "taep96's epic website", description = "Hey there! I'm taep96!" 
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="https://taep96.moe/images/cirno-business.png" />
-        <meta property="og:url" content="https://taep96.moe/" />
+        <meta property="og:url" content={site.href} />
+        <meta property="og:image" content={`${site.href}/cirno-business.png`} />
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:domain" content="taep96.moe" />
-        <meta name="twitter:url" content="https://taep96.moe/" />
-        <meta name="twitter:image" content="https://taep96.moe/images/cirno-business.png" />
+        <meta name="twitter:domain" content={site.hostname} />
+        <meta name="twitter:url" content={site.href} />
+        <meta name="twitter:image" content={`${site.href}/cirno-business.png`} />
     </head>
     <body class="flex items-center justify-center">
         <main class="flex w-[80vw] flex-col gap-12">
