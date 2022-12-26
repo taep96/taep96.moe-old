@@ -9,10 +9,7 @@ export interface Props {
     description?: string;
 }
 
-const {
-    title = "taep96's epic website",
-    description = "Welcome to my website! I'm a programmer with a passion for Open Source software and a big weeb. In my free time, I play osu! or watch anime",
-} = Astro.props;
+const { title = "taep96's epic website", description = "Hey there! I'm taep96!..." } = Astro.props;
 
 const site = Astro.site!;
 ---
@@ -48,8 +45,8 @@ const site = Astro.site!;
         <meta name="twitter:url" content={site.href} />
         <meta name="twitter:image" content={`${site.href}cirno-business.png`} />
     </head>
-    <body class="flex items-center justify-center">
-        <main class="flex w-[80vw] flex-col gap-12">
+    <body class="flex items-center justify-center bg-bg font-mono text-fg">
+        <main class="my-12 flex w-4/5 flex-col gap-12">
             <slot />
         </main>
         <Image class="fixed bottom-4 right-4 w-32 opacity-10" src={Archbtw} format="avif" alt="I use Arch btw" />
@@ -57,16 +54,16 @@ const site = Astro.site!;
 </html>
 
 <style is:global>
-    :root {
-        @apply bg-bg font-mono text-sm text-fg sm:text-base;
-    }
-
     h1 {
-        @apply text-xl font-bold sm:text-2xl;
+        @apply text-2xl font-bold;
     }
 
     a {
         @apply text-green hover:underline;
+    }
+
+    svg {
+        @apply pointer-events-none min-w-fit;
     }
 
     /*
@@ -85,7 +82,7 @@ const site = Astro.site!;
 
     html,
     body {
-        height: 100%;
+        min-height: 100vh;
     }
 
     body {
