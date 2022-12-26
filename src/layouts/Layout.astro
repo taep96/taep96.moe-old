@@ -1,5 +1,6 @@
 ---
-import "@fontsource/jetbrains-mono/variable.css";
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/700.css";
 
 import Archbtw from "@assets/archbtw.png";
 import { Image } from "@astrojs/image/components";
@@ -63,7 +64,7 @@ const site = Astro.site!;
     }
 
     svg {
-        @apply pointer-events-none min-w-fit;
+        @apply pointer-events-none min-h-[24px] min-w-[24px];
     }
 
     /*

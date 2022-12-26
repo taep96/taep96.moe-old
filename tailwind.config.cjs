@@ -14,13 +14,10 @@ module.exports = {
                 mono: ["JetBrains MonoVariable", "monospace"],
             },
             animation: {
-                cursor: "cursor 1.5s infinite",
+                cursor: "cursor .7s linear infinite alternate",
             },
             keyframes: {
-                cursor: {
-                    "0%, 100%": { opacity: 0 },
-                    "50%": { opacity: 1 },
-                },
+                cursor: { "100%": { opacity: 0 } },
             },
         },
     },
