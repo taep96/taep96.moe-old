@@ -11,7 +11,7 @@ module.exports = {
                 gray: "#928374",
             },
             fontFamily: {
-                mono: ["JetBrains MonoVariable", "monospace"],
+                mono: ["JetBrains Mono", "monospace"],
             },
             animation: {
                 cursor: "cursor .7s linear infinite alternate",
