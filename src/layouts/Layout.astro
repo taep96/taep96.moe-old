@@ -3,6 +3,8 @@ import "@fontsource/jetbrains-mono/400.css";
 import "@fontsource/jetbrains-mono/700.css";
 
 import Archbtw from "@assets/archbtw.png";
+import Background from "@assets/background.png";
+import { getImage } from "@astrojs/image";
 import { Image } from "@astrojs/image/components";
 
 export interface Props {
@@ -13,6 +15,12 @@ export interface Props {
 const { title = "taep96's epic website", description = "Hey there! I'm taep96!..." } = Astro.props;
 
 const site = Astro.site!;
+
+const { src } = await getImage({ src: Background, format: "avif", quality: 100, alt: "" });
+
+const backgroundUrl = `url(${src})`;
+
+// console.log(src);
 ---
 
 <!DOCTYPE html>
@@ -23,7 +31,7 @@ const site = Astro.site!;
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width" />
-        <meta name="theme-color" content="#b8bb26" />
+        <meta name="theme-color" content="#fbf1c7" />
         <link rel="canonical" href={Astro.url.href} />
 
         <!-- Icons -->
@@ -46,25 +54,39 @@ const site = Astro.site!;
         <meta name="twitter:url" content={site.href} />
         <meta name="twitter:image" content={`${site.href}cirno-business.png`} />
     </head>
-    <body class="flex items-center justify-center bg-bg font-mono text-fg">
+    <body
+        class="flex items-center justify-center bg-bg bg-cover bg-center font-mono text-fg shadow-inner selection:bg-blue selection:text-bg"
+    >
         <main class="my-12 flex w-4/5 flex-col gap-12">
             <slot />
         </main>
-        <Image class="fixed bottom-4 right-4 w-32 opacity-10" src={Archbtw} format="avif" alt="I use Arch btw" />
+        <Image
+            class="fixed bottom-4 right-4 w-32 opacity-25"
+            src={Archbtw}
+            format="avif"
+            quality={100}
+            loading="eager"
+            alt="I use Arch btw"
+        />
     </body>
 </html>
 
-<style is:global>
+<style is:global define:vars={{ backgroundUrl }}>
+    body {
+        background-image: var(--backgroundUrl);
+    }
+
     h1 {
         @apply text-2xl font-bold;
     }
 
     a {
-        @apply text-green hover:underline;
+        @apply text-blue hover:underline;
     }
 
+    /* Prevent SVGs from shrinking */
     svg {
-        @apply pointer-events-none min-h-[24px] min-w-[24px];
+        @apply min-h-[24px] min-w-[24px];
     }
 
     /*

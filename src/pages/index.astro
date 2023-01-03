@@ -8,7 +8,15 @@ import { AtSign, GitHub, Mail } from "astro-feather-icons";
 ---
 
 <Layout>
-    <Image class="aspect-square w-64 rounded-full" src={ProfilePicture} width="512" format="avif" alt="" />
+    <Image
+        class="aspect-square w-64 rounded-full"
+        src={ProfilePicture}
+        width="512"
+        format="avif"
+        quality={100}
+        loading="eager"
+        alt=""
+    />
     <div class="flex w-fit flex-col gap-4">
         <h1>Hey there! 👋</h1>
         <p class="max-w-[46rem] leading-tight">
@@ -18,16 +26,16 @@ import { AtSign, GitHub, Mail } from "astro-feather-icons";
         <hr class="rounded-full border-gray" />
         <footer class="flex flex-wrap gap-x-12 gap-y-2">
             <a class="flex gap-1 text-fg" href="//discord.com" target="_blank">
-                <AtSign class="text-green aspect-square w-6" />
-                <span>taep96<span class="text-green">#</span>7980</span>
+                <AtSign class="text-blue aspect-square w-6" />
+                <span>taep96<span class="text-blue">#</span>7980</span>
             </a>
             <a class="flex gap-1 text-fg" href="mailto:taep96@cock.li" target="_blank">
-                <Mail class="text-green aspect-square w-6" />
-                <span>taep96<span class="text-green">@</span>cock<span class="text-green">.</span>li</span>
+                <Mail class="text-blue aspect-square w-6" />
+                <span>taep96<span class="text-blue">@</span>cock<span class="text-blue">.</span>li</span>
             </a>
             <a class="flex gap-1 text-fg" href="//github.com/taep96" target="_blank">
-                <GitHub class="text-green aspect-square w-6" />
-                <span>github<span class="text-green">.</span>com<span class="text-green">/</span>taep96</span>
+                <GitHub class="text-blue aspect-square w-6" />
+                <span>github<span class="text-blue">.</span>com<span class="text-blue">/</span>taep96</span>
             </a>
         </footer>
     </div>
