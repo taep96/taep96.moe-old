@@ -10,17 +10,24 @@ import { Image } from "@astrojs/image/components";
 export interface Props {
     title?: string;
     description?: string;
+    embedImagePath?: string;
+    embedImageSize?: "summary" | "summary_large_image";
 }
 
-const { title = "taep96's epic website", description = "Hey there! I'm taep96!..." } = Astro.props;
+const {
+    title = "taep96's epic website",
+    description = "Hey there! I'm taep96!...",
+    embedImagePath = "apple-touch-icon.png",
+    embedImageSize = "summary",
+} = Astro.props;
+
+const normalizedEmbedImagePath = embedImagePath.replace(/^\/+/, "");
 
 const site = Astro.site!;
 
 const { src } = await getImage({ src: Background, format: "avif", quality: 100, alt: "" });
 
 const backgroundUrl = `url(${src})`;
-
-// console.log(src);
 ---
 
 <!DOCTYPE html>
@@ -32,7 +39,7 @@ const backgroundUrl = `url(${src})`;
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width" />
         <meta name="theme-color" content="#fbf1c7" />
-        <link rel="canonical" href={Astro.url.href} />
+        <link rel="canonical" href={site.href} />
 
         <!-- Icons -->
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -44,15 +51,15 @@ const backgroundUrl = `url(${src})`;
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={site.href} />
-        <meta property="og:image" content={`${site.href}cirno-business.png`} />
+        <meta property="og:image" content={site.href + normalizedEmbedImagePath} />
 
         <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content={embedImageSize} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:domain" content={site.hostname} />
         <meta name="twitter:url" content={site.href} />
-        <meta name="twitter:image" content={`${site.href}cirno-business.png`} />
+        <meta name="twitter:image" content={site.href + normalizedEmbedImagePath} />
     </head>
     <body
         class="flex items-center justify-center bg-bg bg-cover bg-center font-mono text-fg shadow-inner selection:bg-blue selection:text-bg"
