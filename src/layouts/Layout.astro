@@ -2,10 +2,9 @@
 import "@fontsource/jetbrains-mono/400.css";
 import "@fontsource/jetbrains-mono/700.css";
 
-import Archbtw from "@assets/archbtw.png";
+import Archbtw from "@assets/archbtw.svg";
 import Background from "@assets/background.png";
 import { getImage } from "@astrojs/image";
-import { Image } from "@astrojs/image/components";
 
 export interface Props {
     title?: string;
@@ -67,14 +66,15 @@ const backgroundUrl = `url(${src})`;
         <main class="my-12 flex w-4/5 flex-col gap-12">
             <slot />
         </main>
-        <Image
+        <!-- <Image
             class="fixed bottom-4 right-4 w-32"
             src={Archbtw}
             format="avif"
             quality={100}
             loading="eager"
             alt="I use Arch btw"
-        />
+        /> -->
+        <img class="fixed bottom-4 right-4 w-32" src={Archbtw} alt="I use Arch by the way" />
     </body>
 </html>
 

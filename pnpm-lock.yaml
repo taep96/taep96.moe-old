@@ -23,7 +23,7 @@ specifiers:
     eslint-plugin-unused-imports: ^2.0.0
     npm-run-all: ^4.1.5
     prettier: ^2.8.1
-    prettier-plugin-astro: ^0.7.1
+    prettier-plugin-astro: ^0.7.2
     prettier-plugin-tailwindcss: ^0.2.1
     sharp: ^0.31.3
     tailwindcss: ^3.2.4
@@ -56,7 +56,7 @@ devDependencies:
     eslint-plugin-unused-imports: 2.0.0_zgazubnvp3urkgs5b7mw2pde3m
     npm-run-all: 4.1.5
     prettier: 2.8.1
-    prettier-plugin-astro: 0.7.1
+    prettier-plugin-astro: 0.7.2
     prettier-plugin-tailwindcss: 0.2.1_prettier@2.8.1
     typescript: 4.9.4
 
@@ -84,6 +84,7 @@ packages:
             {
                 integrity: sha512-HgjKVwFZ3LwKnGv8gI0J6MhIniUyKwSmGwo7pTDTn14iwfqovfgzVPeJ0+KFpuKBbB4z1lsFNbD/c1WXZyKz6A==,
             }
+        dev: true
 
     /@astrojs/compiler/0.31.3:
         resolution:
@@ -123,7 +124,7 @@ packages:
             "@vscode/emmet-helper": 2.8.4
             events: 3.3.0
             prettier: 2.8.1
-            prettier-plugin-astro: 0.7.1
+            prettier-plugin-astro: 0.7.2
             source-map: 0.7.4
             vscode-css-languageservice: 6.2.1
             vscode-html-languageservice: 5.0.3
@@ -1443,7 +1444,7 @@ packages:
         engines: { node: ^14.18.0 || >=16.12.0, npm: ">=6.14.0" }
         hasBin: true
         dependencies:
-            "@astrojs/compiler": 0.31.1
+            "@astrojs/compiler": 0.31.3
             "@astrojs/language-server": 0.28.3
             "@astrojs/markdown-remark": 1.2.0
             "@astrojs/telemetry": 1.0.1
@@ -5775,13 +5776,12 @@ packages:
             fast-diff: 1.2.0
         dev: true
 
-    /prettier-plugin-astro/0.7.1:
+    /prettier-plugin-astro/0.7.2:
         resolution:
             {
-                integrity: sha512-ySeyXHIXNZpbqZCcj8eoWl6z2UDHYl6DPgN7z9E1HElG8aVlC2WQNjfcpcSBuF4jwwo+HHi44pun/Hlr+h8OsA==,
+                integrity: sha512-mmifnkG160BtC727gqoimoxnZT/dwr8ASxpoGGl6EHevhfblSOeu+pwH1LAm5Qu1MynizktztFujHHaijLCkww==,
             }
         engines: { node: ^14.15.0 || >=16.0.0, pnpm: ">=7.14.0" }
-        requiresBuild: true
         dependencies:
             "@astrojs/compiler": 0.31.3
             prettier: 2.8.1
