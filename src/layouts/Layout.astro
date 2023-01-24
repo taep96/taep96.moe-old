@@ -61,19 +61,11 @@ const backgroundUrl = `url(${src})`;
         <meta name="twitter:image" content={site.href + normalizedEmbedImagePath} />
     </head>
     <body
-        class="flex items-center justify-center bg-bg bg-cover bg-center font-mono text-fg shadow-inner selection:bg-blue selection:text-bg"
+        class="flex items-center justify-center bg-bg bg-cover bg-center font-mono text-fg selection:bg-blue selection:text-bg"
     >
         <main class="my-12 flex w-4/5 flex-col gap-12">
             <slot />
         </main>
-        <!-- <Image
-            class="fixed bottom-4 right-4 w-32"
-            src={Archbtw}
-            format="avif"
-            quality={100}
-            loading="eager"
-            alt="I use Arch btw"
-        /> -->
         <img class="fixed bottom-4 right-4 w-32" src={Archbtw} alt="I use Arch by the way" />
     </body>
 </html>

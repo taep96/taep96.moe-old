@@ -5,7 +5,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://taep96.moe",
+    site: "https://taep96.moe/",
     integrations: [
         tailwind(),
         image({
