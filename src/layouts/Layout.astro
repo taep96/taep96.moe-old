@@ -60,7 +60,11 @@ const site = Astro.site!;
         <main class="my-12 flex w-4/5 flex-col gap-12">
             <slot />
         </main>
-        <img class="fixed bottom-4 right-4 w-32" src={Archbtw.src} alt="I use Arch by the way" />
+        <img
+            class="fixed bottom-4 right-4 w-32 opacity-25 lg:opacity-100"
+            src={Archbtw.src}
+            alt="I use Arch by the way"
+        />
     </body>
 </html>
 
