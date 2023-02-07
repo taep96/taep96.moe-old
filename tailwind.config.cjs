@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
     theme: {
@@ -11,7 +12,7 @@ module.exports = {
                 mint: "#AAC9D4",
             },
             fontFamily: {
-                mono: ["JetBrains Mono", "monospace"],
+                mono: ["JetBrains Mono", "monospace", ...fontFamily.mono],
             },
             animation: {
                 cursor: "cursor .8s ease-in-out infinite alternate",
