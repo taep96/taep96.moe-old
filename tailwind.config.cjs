@@ -5,16 +5,16 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                bg: "#fbf1c7",
-                fg: "#3c3836",
-                blue: "#458588",
-                gray: "#928374",
+                bg: "#202231",
+                fg: "#DEE0EF",
+                fennel: "#709BBD",
+                mint: "#AAC9D4",
             },
             fontFamily: {
                 mono: ["JetBrains Mono", "monospace"],
             },
             animation: {
-                cursor: "cursor .7s linear infinite alternate",
+                cursor: "cursor .8s ease-in-out infinite alternate",
             },
             keyframes: {
                 cursor: { "100%": { opacity: 0 } },

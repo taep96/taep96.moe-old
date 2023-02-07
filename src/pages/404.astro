@@ -3,7 +3,7 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Page not found">
-    <h1 class="after:animate-cursor after:bg-blue after:text-blue after:content-['-']">404</h1>
+    <h1 class="after:animate-cursor after:bg-fennel after:text-fennel after:content-['-']">404</h1>
     <p>Couldn't find the page you were looking for - <a href="/">go home?</a></p>
 </Layout>
 
@@ -16,7 +16,7 @@ import Layout from "@layouts/Layout.astro";
         "( ౦ ‸ ౦ )",
         "( ￣Д￣)",
         "( ￣▽￣)︻┳═一",
-        "(-_-)・・・",
+        "(-_-)",
         "(>_<)",
         "(>д<)",
         "(>﹏<)",
@@ -93,7 +93,15 @@ import Layout from "@layouts/Layout.astro";
         "ヾ(`ヘ´)ﾉﾞ",
     ];
 
-    const kaomoji = kaomojis[Math.floor(Math.random() * kaomojis.length)];
-    document.querySelector("p")!.append(` ${kaomoji}`);
-    document.title += ` ${kaomoji}`;
+    const kaomoji = " " + kaomojis[Math.floor(Math.random() * kaomojis.length)];
+    document.title += kaomoji;
+
+    const heading = document.querySelector("h1")!;
+    const kaomojiChars = kaomoji.split("");
+
+    kaomojiChars.forEach((char, index) => {
+        setTimeout(() => {
+            heading.append(char);
+        }, index * 50);
+    });
 </script>
