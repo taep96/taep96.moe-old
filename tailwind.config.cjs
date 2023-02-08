@@ -14,6 +14,9 @@ module.exports = {
             fontFamily: {
                 mono: ["JetBrains Mono", "monospace", ...fontFamily.mono],
             },
+            boxShadow: {
+                outline: `0px 0px 0px 2px #AAC9D440`,
+            },
             animation: {
                 cursor: "cursor .8s ease-in-out infinite alternate",
             },
