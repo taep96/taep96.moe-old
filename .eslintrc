@@ -1,47 +1,52 @@
 {
-    // * https://github.com/eslint/eslint/issues/13481
+  // * https://github.com/eslint/eslint/issues/13481
 
-    "plugins": ["@typescript-eslint", "unused-imports", "simple-import-sort", "prettier"],
-    "extends": [
-        "airbnb-base",
-        "airbnb-typescript/base",
-        "plugin:import/recommended",
-        "plugin:astro/recommended",
-        "plugin:tailwindcss/recommended",
-        "plugin:astro/jsx-a11y-recommended",
-        "plugin:prettier/recommended"
-    ],
-    "parserOptions": {
-        "project": "./tsconfig.json",
-        "extraFileExtensions": [".astro"]
-    },
-    "settings": {
-        "tailwindcss": {
-            "config": "./tailwind.config.cjs"
-        }
-    },
-    "rules": {
-        // conflicts with prettier-plugin-tailwindcss
-        "tailwindcss/classnames-order": "off",
-
-        "@typescript-eslint/consistent-type-imports": "error",
-        "simple-import-sort/imports": "error",
-        "simple-import-sort/exports": "error",
-
-        "@typescript-eslint/no-unused-vars": "off",
-        "unused-imports/no-unused-imports": "error",
-        "unused-imports/no-unused-vars": [
-            "error",
-            {
-                "argsIgnorePattern": "^_"
-            }
-        ],
-
-        "import/no-unresolved": [
-            "error",
-            {
-                "ignore": ["@*"]
-            }
-        ]
+  "plugins": [
+    "@typescript-eslint",
+    "unused-imports",
+    "simple-import-sort",
+    "prettier"
+  ],
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "plugin:import/recommended",
+    "plugin:astro/recommended",
+    "plugin:tailwindcss/recommended",
+    "plugin:astro/jsx-a11y-recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "extraFileExtensions": [".astro"]
+  },
+  "settings": {
+    "tailwindcss": {
+      "config": "./tailwind.config.cjs"
     }
+  },
+  "rules": {
+    // conflicts with prettier-plugin-tailwindcss
+    "tailwindcss/classnames-order": "off",
+
+    "@typescript-eslint/consistent-type-imports": "error",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": ["@*"]
+      }
+    ]
+  }
 }

@@ -5,17 +5,17 @@ import "@fontsource/jetbrains-mono/700.css";
 import Archbtw from "@/assets/archbtw.gif";
 
 export interface Props {
-    title?: string;
-    description?: string;
-    embedImagePath?: string;
-    embedImageSize?: "summary" | "summary_large_image";
+  title?: string;
+  description?: string;
+  embedImagePath?: string;
+  embedImageSize?: "summary" | "summary_large_image";
 }
 
 const {
-    title = "taep96's epic website",
-    description = "Hey there! I'm taep96!...",
-    embedImagePath = "apple-touch-icon.png",
-    embedImageSize = "summary",
+  title = "taep96's epic website",
+  description = "Hey there! I'm taep96!...",
+  embedImagePath = "apple-touch-icon.png",
+  embedImageSize = "summary",
 } = Astro.props;
 
 const normalizedEmbedImagePath = embedImagePath.replace(/^\/+/, "");
@@ -25,107 +25,111 @@ const site = Astro.site!;
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- HTML Meta Tags -->
-        <meta charset="UTF-8" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="theme-color" content="#202231" />
-        <link rel="canonical" href={site.href} />
+  <head>
+    <!-- HTML Meta Tags -->
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#202231" />
+    <link rel="canonical" href={site.href} />
 
-        <!-- Icons -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
-        <!-- OpenGraph -->
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={site.href} />
-        <meta property="og:image" content={site.href + normalizedEmbedImagePath} />
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={site.href} />
+    <meta property="og:image" content={site.href + normalizedEmbedImagePath} />
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content={embedImageSize} />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:domain" content={site.hostname} />
-        <meta name="twitter:url" content={site.href} />
-        <meta name="twitter:image" content={site.href + normalizedEmbedImagePath} />
-    </head>
-    <body
-        class="flex items-center justify-center bg-bg bg-cover bg-center font-mono text-fg selection:bg-fennel selection:text-bg"
-    >
-        <main class="my-12 flex w-4/5 flex-col gap-12">
-            <slot />
-        </main>
-        <img class="fixed -right-1/4 mt-12 w-10/12 opacity-10" src={Archbtw.src} alt="I use Arch by the way" />
-    </body>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content={embedImageSize} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:domain" content={site.hostname} />
+    <meta name="twitter:url" content={site.href} />
+    <meta name="twitter:image" content={site.href + normalizedEmbedImagePath} />
+  </head>
+  <body
+    class="flex items-center justify-center bg-bg bg-cover bg-center font-mono text-fg selection:bg-fennel selection:text-bg"
+  >
+    <main class="my-12 flex w-4/5 flex-col gap-12">
+      <slot />
+    </main>
+    <img
+      class="fixed -right-1/4 mt-12 w-10/12 opacity-10"
+      src={Archbtw.src}
+      alt="I use Arch by the way"
+    />
+  </body>
 </html>
 
 <style is:global>
-    h1 {
-        @apply text-2xl font-bold;
-    }
+  h1 {
+    @apply text-2xl font-bold;
+  }
 
-    a {
-        @apply text-fennel hover:underline;
-    }
+  a {
+    @apply text-fennel hover:underline;
+  }
 
-    /* Prevent SVGs from shrinking */
-    svg {
-        @apply min-h-[24px] min-w-[24px];
-    }
+  /* Prevent SVGs from shrinking */
+  svg {
+    @apply min-h-[24px] min-w-[24px];
+  }
 
-    /*
+  /*
         Josh's Custom CSS Reset
         https://www.joshwcomeau.com/css/custom-css-reset/
     */
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-    * {
-        margin: 0;
-    }
+  * {
+    margin: 0;
+  }
 
-    html,
-    body {
-        min-height: 100vh;
-    }
+  html,
+  body {
+    min-height: 100vh;
+  }
 
-    body {
-        -webkit-font-smoothing: antialiased;
-        isolation: isolate;
-        line-height: 1.5;
-    }
+  body {
+    -webkit-font-smoothing: antialiased;
+    isolation: isolate;
+    line-height: 1.5;
+  }
 
-    img,
-    picture,
-    video,
-    canvas,
-    svg {
-        display: block;
-        max-width: 100%;
-    }
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
 
-    input,
-    button,
-    textarea,
-    select {
-        font: inherit;
-    }
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
 
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        overflow-wrap: break-word;
-    }
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
 </style>
