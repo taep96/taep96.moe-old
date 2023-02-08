@@ -31,7 +31,7 @@ const site = Astro.site!;
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width" />
-        <meta name="theme-color" content="#709bbd" />
+        <meta name="theme-color" content="#202231" />
         <link rel="canonical" href={site.href} />
 
         <!-- Icons -->
@@ -60,11 +60,7 @@ const site = Astro.site!;
         <main class="my-12 flex w-4/5 flex-col gap-12">
             <slot />
         </main>
-        <img
-            class="fixed bottom-4 right-4 w-32 opacity-25 lg:opacity-100"
-            src={Archbtw.src}
-            alt="I use Arch by the way"
-        />
+        <img class="fixed -right-1/4 mt-12 w-10/12 opacity-10" src={Archbtw.src} alt="I use Arch by the way" />
     </body>
 </html>
 
