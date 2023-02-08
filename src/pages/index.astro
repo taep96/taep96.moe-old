@@ -5,6 +5,7 @@ import { Image } from "@astrojs/image/components";
 import { AtSign, GitHub, Mail } from "astro-feather-icons";
 
 import ProfilePicture from "@/assets/cirno-business.png";
+import F from "@/components/Fennel.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -28,15 +29,15 @@ import Layout from "@/layouts/Layout.astro";
         <footer class="flex flex-wrap gap-x-12 gap-y-2">
             <a class="flex gap-1 text-fg" href="//discord.com" target="_blank">
                 <AtSign class="text-fennel aspect-square w-6" />
-                <span>taep96<span class="text-fennel">#</span>7980</span>
+                <span>taep96<F>#</F>7980</span>
             </a>
             <a class="flex gap-1 text-fg" href="mailto:taep96@cock.li" target="_blank">
                 <Mail class="text-fennel aspect-square w-6" />
-                <span>taep96<span class="text-fennel">@</span>cock<span class="text-fennel">.</span>li</span>
+                <span>taep96<F>@</F>cock<F>.</F>li</span>
             </a>
             <a class="flex gap-1 text-fg" href="//github.com/taep96" target="_blank">
                 <GitHub class="text-fennel aspect-square w-6" />
-                <span>github<span class="text-fennel">.</span>com<span class="text-fennel">/</span>taep96</span>
+                <span>github<F>.</F>com<F>/</F>taep96</span>
             </a>
         </footer>
     </div>
