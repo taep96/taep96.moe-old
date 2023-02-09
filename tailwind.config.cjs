@@ -12,7 +12,7 @@ module.exports = {
         mint: "#AAC9D4",
       },
       fontFamily: {
-        mono: ["JetBrains Mono", "monospace", ...fontFamily.mono],
+        mono: ["JetBrains Mono", ...fontFamily.mono],
       },
       boxShadow: {
         outline: `0px 0px 0px 2px #AAC9D440`,
