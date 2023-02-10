@@ -2,8 +2,6 @@
 import "@fontsource/jetbrains-mono/400.css";
 import "@fontsource/jetbrains-mono/700.css";
 
-import Archbtw from "@/assets/archbtw.gif";
-
 export interface Props {
   title?: string;
   description?: string;
@@ -60,11 +58,14 @@ const site = Astro.site!;
     <main class="my-12 flex w-4/5 flex-col gap-12">
       <slot />
     </main>
-    <img
+    <video
       class="fixed -right-1/4 mt-12 w-10/12 opacity-10"
-      src={Archbtw.src}
-      alt="I use Arch by the way"
-    />
+      autoplay
+      muted
+      loop
+    >
+      <source src="archbtw.webm" />
+    </video>
   </body>
 </html>
 
